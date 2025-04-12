@@ -20,7 +20,6 @@ Implemented so far:
 - [ ] Chapter 3 – Classes, Objects, Methods (Coming Soon)
 - [ ] Chapter 5+ – Work in progress...
 
-(You can update the list as you complete more chapters.)
 
 ## Folder Structure
 
