@@ -10,7 +10,7 @@ no arguments causes the program to output a single newline character.
 [Hint: Repetition statements are required.]
  */
 
-public class CheckboardPattern {
+public class CheckerboardPattern {
     public static void main(String[] args) {
         int size = 16;  // Size of the checkerboard (rows and columns)
         int row = 1;
