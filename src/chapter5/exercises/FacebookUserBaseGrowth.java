@@ -8,4 +8,31 @@ package chapter5.exercises;
  */
 
 public class FacebookUserBaseGrowth {
+    public static void main(String[] args) {
+        double currentUserBase = 1000000000.0; // Starting;
+        double targetUserBase1 = 1500000000.0; // Target = 1.5 billion
+        double targetUserBase2 = 2000000000.0; // Target = 2.0 billion
+        double growthRate = 0.04;
+
+        int month = 0;
+        boolean reached1_5B = false;
+        boolean reached2B = false;
+
+        // display headers
+        System.out.printf("%s%20s%n", "Month", "User Base");
+
+        while (!reached2B){
+            double newUserBase = currentUserBase*Math.pow(1+growthRate,month);
+            if (!reached1_5B && newUserBase>=targetUserBase1){
+                System.out.printf("%4d%,20.2f ← Reached 1.5 Billion%n", month, newUserBase);
+
+                reached1_5B=true;
+            }
+            if (!reached2B && newUserBase>=targetUserBase2){
+                System.out.printf("%4d%,20.2f ← Reached 1.5 Billion%n", month, newUserBase);
+                reached2B=true;
+            }
+            month++;
+        }
+    }
 }
