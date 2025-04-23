@@ -1,22 +1,19 @@
 package chapter3.examples;
-// Fig. 3.2: AccountTest.java
-// Creating and manipulating an Account object.
+// Fig. 3.6: AccountTest.java
+// Using the Account constructor to initialize the name instance
+// variable at the time each Account object is created.
 import java.util.Scanner;
 
 public class AccountTest {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        Account myAccount = new Account();
+        Account account1 = new Account("Sunny Chauhan");
+        Account account2 = new Account("Honey Chauhan");
 
-        System.out.printf("Initial name is: %s%n%n", myAccount.getName());
+        System.out.printf("account1 name is: %s%n", account1.getName());
 
-        System.out.print("Please enter the name:");
-        String theName = input.nextLine();
-        myAccount.setName(theName);
-        System.out.println();
-
-        System.out.printf("Name in object myAccount is:%n%s%n", myAccount.getName());
+        System.out.printf("account2 name is: %s%n", account2.getName());
 
 
 
