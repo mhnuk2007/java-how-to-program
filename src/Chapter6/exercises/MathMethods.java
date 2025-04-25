@@ -1,4 +1,4 @@
-package Chapter6.examples;
+package Chapter6.exercises;
 /*
     6.3 Write an application that tests whether the examples of the Math class method
     calls shown in Fig. 6.2 actually produce the indicated results.
