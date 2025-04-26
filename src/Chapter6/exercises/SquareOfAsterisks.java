@@ -23,11 +23,15 @@ public class SquareOfAsterisks {
     }
 
     public static void squareOfAsterisks(int side) {
-        for (int i = 0; i < side; i++) {
-            for (int j = 0; j < side; j++) {
+        int rows = side;
+        while (rows > 0) {
+            int columns = side;
+            while (columns > 0){
                 System.out.print("*");
+                columns--;
             }
             System.out.println();
+            rows--;
         }
     }
 }
