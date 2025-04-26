@@ -15,25 +15,25 @@ import java.util.Scanner;
 public class MultiplesChecker {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        int num1, num2;
 
-        System.out.println("Enter two integers (enter 0 as the first integer to exit).");
-        System.out.print("First integer: ");
-        int num1 = input.nextInt();
-
-        while (num1 != 0) {
-            System.out.print("Second integer: ");
-            int num2 = input.nextInt();
-
-            System.out.println(
-                    isMultiple(num1, num2)
-                            ? num2 + " is a multiple of " + num1
-                            : num2 + " is NOT a multiple of " + num1
-            );
-
-            System.out.println("\nEnter two integers (enter 0 as the first integer to exit).");
+        do {
+            System.out.println("Enter two integers (enter 0 as the first integer to exit).");
             System.out.print("First integer: ");
             num1 = input.nextInt();
-        }
+
+            if (num1 != 0) {
+                System.out.print("Second integer: ");
+                num2 = input.nextInt();
+
+                System.out.println(
+                        isMultiple(num1, num2)
+                                ? num2 + " is a multiple of " + num1
+                                : num2 + " is NOT a multiple of " + num1
+                );
+            }
+
+        } while (num1 != 0);
 
         input.close();
     }
