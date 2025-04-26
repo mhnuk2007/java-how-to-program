@@ -11,10 +11,15 @@ package Chapter6.exercises;
     and performs the calculation with the integerPower method.
  */
 
+import java.util.Scanner;
+
 public class Exponentiation {
     public static void main(String[] args) {
-        int base = 3;
-        int exponent = 4;
+        Scanner input = new Scanner(System.in);  // Scanner to get user input
+        System.out.print("Enter the base: ");
+        int base = input.nextInt();
+        System.out.print("Enter the exponent: ");
+        int exponent = input.nextInt();
 
         System.out.printf("%d^%d = %d%n", base, exponent, integerPower(base, exponent));
     }
