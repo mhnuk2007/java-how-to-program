@@ -29,11 +29,20 @@ public class PrimeNumbers {
         // Print the total number of primes found
         System.out.printf("%nTotal number of primes less than 10,000: %d%n", primeCount);
     }
-
+    // Optimized version
     // Method to determine whether a number is prime
     public static boolean isPrime(int number) {
         // 1 is not a prime number
         if (number == 1) {
+            return false;
+        }
+        // Include 2
+        if (number == 2) {
+            return true;
+        }
+
+        // Exclude even numbers
+        if (number%2 == 0) {
             return false;
         }
 
@@ -41,7 +50,7 @@ public class PrimeNumbers {
         // Calculate the square root of the number
         int sqrt = (int) Math.sqrt(number);
         // Check divisibility from 2 up to sqrt(number)
-        for (int i = 2; i <= sqrt; i++) {
+        for (int i = 3; i <= sqrt; i+=2) {
             if (number % i == 0) {
                 return false; // Not prime if divisible by any number other than 1 and itself
             }
@@ -50,3 +59,10 @@ public class PrimeNumbers {
         return true; // Number is prime
     }
 }
+/*
+Summary of what you improved:
+Handled 2 separately.
+Excluded all even numbers early (number % 2 == 0).
+Loop through only odd numbers starting from 3, incrementing by 2.
+Went only up to sqrt(number).
+ */
