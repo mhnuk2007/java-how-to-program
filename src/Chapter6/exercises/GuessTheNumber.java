@@ -27,7 +27,6 @@ public class GuessTheNumber {
             System.out.print("Try to guess it: ");
 
             int guess = -1; // Initialize guess to an invalid value
-            int tries = 0;
 
             // Loop until the user guesses correctly
             while (guess != numberToGuess) {
@@ -38,7 +37,6 @@ public class GuessTheNumber {
                 }
 
                 guess = input.nextInt();
-                tries++;
 
                 // Check if the guess is too high, too low, or correct
                 if (guess > numberToGuess) {
@@ -50,13 +48,6 @@ public class GuessTheNumber {
 
             // When the guess is correct
             System.out.println("Congratulations! You guessed the number!");
-
-            // Provide feedback on the number of tries
-            if (tries <= 10) {
-                System.out.println("Either you know the secret or you got lucky!");
-            } else {
-                System.out.println("You should be able to do better!");
-            }
 
             // Ask if the user wants to play again
             System.out.print("Do you want to play again? (yes/no): ");
