@@ -37,8 +37,11 @@ public class PrimeNumbers {
             return false;
         }
 
-        // Check divisibility from 2 up to number/2
-        for (int i = 2; i <= number / 2; i++) {
+        // Check divisibility from 2 up to square root of the number
+        // Calculate the square root of the number
+        int sqrt = (int) Math.sqrt(number);
+        // Check divisibility from 2 up to sqrt(number)
+        for (int i = 2; i <= sqrt; i++) {
             if (number % i == 0) {
                 return false; // Not prime if divisible by any number other than 1 and itself
             }
