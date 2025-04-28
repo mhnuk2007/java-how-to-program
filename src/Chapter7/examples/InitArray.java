@@ -1,19 +1,18 @@
 package Chapter7.examples;
 
-// Fig. 7.2: InitArray.java
-// Initializing the elements of an array to default values of zero.
+// Fig. 7.3: InitArray.java
+// Initializing the elements of an array with an array initializer.
 
 public class InitArray {
     public static void main(String[] args) {
-        // declare a variable 'array' and initialize it with an array object of size 10
-        int[] array = new int[10]; // all elements are automatically initialized to 0
+        // initializer list specifies the initial value for each element
+        int[] array = {32, 27, 64, 18, 95, 14, 90, 70, 60, 37};
 
-        // display column headings
-        System.out.printf("%s%8s%n", "Index", "Value");
+        System.out.printf("%s%8s%n", "Index", "Value"); // column headings
 
-        // output each array element's index and its corresponding value
+        // output each array element's value
         for (int counter = 0; counter < array.length; counter++) {
             System.out.printf("%5d%8d%n", counter, array[counter]);
         }
-    } // end main
+    }
 } // end class InitArray
