@@ -17,63 +17,10 @@ public class NumberSystemTable {
         for (int decimal = 1; decimal <= 256; decimal++) {
             System.out.printf("%-10d%-15s%-15s%-15s%n",
                     decimal,
-                    decimalToBinary(decimal),
-                    decimalToOctal(decimal),
-                    decimalToHexadecimal(decimal)
+                    Integer.toBinaryString(decimal),
+                    Integer.toOctalString(decimal),
+                    Integer.toHexString(decimal).toUpperCase()
             );
         }
-    }
-
-    // Manual method to convert decimal to binary using StringBuilder
-    public static String decimalToBinary(int decimal) {
-        if (decimal == 0) {
-            return "0";
-        }
-
-        StringBuilder binary = new StringBuilder();
-
-        while (decimal > 0) {
-            binary.insert(0, decimal % 2);
-            decimal /= 2;
-        }
-
-        return binary.toString();
-    }
-
-    // Manual method to convert decimal to octal using StringBuilder
-    public static String decimalToOctal(int decimal) {
-        if (decimal == 0) {
-            return "0";
-        }
-
-        StringBuilder octal = new StringBuilder();
-
-        while (decimal > 0) {
-            octal.insert(0, decimal % 8);
-            decimal /= 8;
-        }
-
-        return octal.toString();
-    }
-
-    // Manual method to convert decimal to hexadecimal using StringBuilder
-    public static String decimalToHexadecimal(int decimal) {
-        if (decimal == 0) {
-            return "0";
-        }
-
-        StringBuilder hexadecimal = new StringBuilder();
-
-        while (decimal > 0) {
-            int remainder = decimal % 16;
-            if (remainder < 10) {
-                hexadecimal.insert(0, remainder);
-            } else {
-                hexadecimal.insert(0, (char)(remainder - 10 + 'A'));
-            }
-            decimal /= 16;
-        }
-
-        return hexadecimal.toString();
     }
 }
