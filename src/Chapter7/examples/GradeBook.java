@@ -86,7 +86,7 @@ public class GradeBook {
         for (int count = 0; count < frequency.length; count++) {
             // output bar label ("00-09: ", ..., "90-99: ", "100: ")
             if (count == 10) {
-                System.out.printf("%5d ", 100);
+                System.out.printf("%5d: ", 100);
             } else {
                 System.out.printf("%02d-%02d: ", count * 10, count * 10 + 9);
             }
