@@ -1,26 +1,30 @@
 package Chapter7.examples;
 
-// Fig. 7.4: InitArray.java
-// Calculating the values to be placed into the elements of an array.
-
+// Fig. 7.17: InitArray.java
+// Initializing two-dimensional arrays.
 public class InitArray {
+    // create and output two-dimensional arrays
     public static void main(String[] args) {
-        final int ARRAY_LENGTH = 10; // constant to define array size
+        int[][] array1 = {{1, 2, 3}, {4, 5, 6}};
+        int[][] array2 = {{1, 2}, {3}, {4, 5, 6}};
 
-        // declare and create an array of 10 integers
-        int[] array = new int[ARRAY_LENGTH];
+        System.out.println("Value in array1 by row are");
+        outPutArray(array1); // displays array 1 by row
 
-        // assign values to array: each element is 2 + 2 * its index
-        for (int counter = 0; counter < array.length; counter++) {
-            array[counter] = 2 + 2 * counter;
-        }
-
-        // display column headings
-        System.out.printf("%s%8s%n", "Index", "Value");
-
-        // display index and corresponding value of each array element
-        for (int counter = 0; counter < array.length; counter++) {
-            System.out.printf("%5d%8d%n", counter, array[counter]);
-        }
+        System.out.println("Value in array2 by row are");
+        outPutArray(array2); // displays array 2 by row
     }
-} // end class InitArray
+
+    // output rows and columns of a two-dimensional array
+    public static void outPutArray(int[][] array) {
+        // loop through array's rows
+        for (int row = 0; row < array.length; row++) {
+            // loop through columns of current row
+            for (int column = 0; column < array[row].length; column++) {
+                System.out.printf("%d ", array[row][column]);
+            }
+            System.out.println(); // start new line of output
+            }
+        }
+
+    } // end class InitArray
