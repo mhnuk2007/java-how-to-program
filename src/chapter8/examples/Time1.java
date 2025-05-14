@@ -17,6 +17,7 @@ public class Time1 {
         this.hour = hour;
         this.minute = minute;
         this.second = second;
+
     }
 
     // convert to String in universal-time format (HH:MM:SS)
