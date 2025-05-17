@@ -1,7 +1,7 @@
 package chapter9.examples;
-// Fig. 9.8: BasePlusCommissionEmployee.java
-// private superclass members cannot be accessed in a subclass.
-
+// Fig. 9.9: BasePlusCommissionEmployee.java
+// BasePlusCommissionEmployee inherits protected instance
+// variables from CommissionEmployee.
 
 public class BasePlusCommissionEmployee extends CommissionEmployee {
 
@@ -11,9 +11,10 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     public BasePlusCommissionEmployee(String firstName, String lastName,
                                       String socialSecurityNumber, double grossSales,
                                       double commissionRate, double baseSalary) {
-        // explicit call to superclass CommissionEmployee constructor
+
         super(firstName, lastName, socialSecurityNumber,
                 grossSales, commissionRate);
+        // if baseSalary is invalid throw exception
         if (baseSalary < 0.0)
             throw new IllegalArgumentException(
                     "Base salary must be >= 0.0");
@@ -36,8 +37,7 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     }
 
     // calculate earnings
-    @Override
-
+    @Override // indicates that this method overrides a superclass method
     public double earnings() {
         // not allowed: commissionRate and grossSales private in superclass
         return baseSalary + (commissionRate * grossSales);
@@ -47,7 +47,8 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     @Override
     public String toString() {
         // not allowed: attempts to access private superclass members
-        return String.format("%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f%n%s: %.2f",
+        return String.format(
+                "%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f%n%s: %.2f",
                 "base-salaried commission employee", firstName, lastName,
                 "social security number", socialSecurityNumber,
                 "gross sales", grossSales, "commission rate", commissionRate,
