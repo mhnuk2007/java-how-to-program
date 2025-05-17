@@ -1,7 +1,8 @@
 package chapter9.examples;
-// Fig. 9.9: BasePlusCommissionEmployee.java
-// BasePlusCommissionEmployee inherits protected instance
-// variables from CommissionEmployee.
+/// Fig. 9.11: BasePlusCommissionEmployee.java
+// BasePlusCommissionEmployee class inherits from CommissionEmployee
+// and accesses the superclass’s private data via inherited
+// public methods.
 
 public class BasePlusCommissionEmployee extends CommissionEmployee {
 
@@ -40,19 +41,15 @@ public class BasePlusCommissionEmployee extends CommissionEmployee {
     @Override // indicates that this method overrides a superclass method
     public double earnings() {
         // not allowed: commissionRate and grossSales private in superclass
-        return baseSalary + (commissionRate * grossSales);
+        return baseSalary + (getCommissionRate() * getGrossSales());
     }
 
     // return String representation of BasePlusCommissionEmployee
     @Override
     public String toString() {
         // not allowed: attempts to access private superclass members
-        return String.format(
-                "%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f%n%s: %.2f",
-                "base-salaried commission employee", firstName, lastName,
-                "social security number", socialSecurityNumber,
-                "gross sales", grossSales, "commission rate", commissionRate,
-                "base salary", baseSalary);
+        return String.format("%s %s%n%s: %.2f", "base-salaried",
+                super.toString(), "base salary", getBaseSalary());
     }
 
 }  // end class BasePlusCommissionEmployee

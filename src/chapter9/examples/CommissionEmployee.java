@@ -1,17 +1,20 @@
 package chapter9.examples;
-// Fig. 9.4: CommissionEmployee.java
-// CommissionEmployee class represents an employee paid a
-// percentage of gross sales.
+// Fig. 9.10: CommissionEmployee.java
+// CommissionEmployee class uses methods to manipulate its
+// private instance variables.
 
 public class CommissionEmployee extends Object {
-    protected final String firstName;
-    protected final String lastName;
-    protected final String socialSecurityNumber;
-    protected double grossSales;
-    protected double commissionRate;
+    private final String firstName;
+    private final String lastName;
+    private final String socialSecurityNumber;
+    private double grossSales; // gross weekly sales
+    private double commissionRate; // commission percentage
 
     // five-argument constructor
-    public CommissionEmployee(String firstName, String lastName, String socialSecurityNumber, double grossSales, double commissionRate) {
+    public CommissionEmployee(String firstName, String lastName,
+                              String socialSecurityNumber, double grossSales,
+                              double commissionRate) {
+
         // implicit call to Object's default constructor occurs here
 
         // if grossSales is invalid throw exception
@@ -77,17 +80,17 @@ public class CommissionEmployee extends Object {
 
     // calculate earnings
     public double earnings() {
-        return commissionRate * grossSales;
+        return grossSales * getGrossSales();
     }
 
     // return String representation of CommissionEmployee object
     @Override // indicates that this method overrides a superclass method
     public String toString() {
         return String.format("%s: %s %s%n%s: %s%n%s: %.2f%n%s: %.2f",
-                "Commission Employee", firstName, lastName,
-                "Social security number", socialSecurityNumber,
-                "Gross sales", grossSales,
-                "Commission rate", commissionRate);
+                "Commission Employee", getFirstName(), getLastName(),
+                "Social security number", getSocialSecurityNumber(),
+                "Gross sales", getGrossSales(),
+                "Commission rate", getCommissionRate());
     }
 }
 
