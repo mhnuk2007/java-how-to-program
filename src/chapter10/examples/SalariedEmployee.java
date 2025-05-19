@@ -1,4 +1,7 @@
 package chapter10.examples;
+// Fig. 10.14: SalariedEmployee.java
+// SalariedEmployee class that implements interface Payable.
+// method getPaymentAmount.
 
 public class SalariedEmployee extends Employee {
     private double weeklySalary;
@@ -26,9 +29,11 @@ public class SalariedEmployee extends Employee {
         return weeklySalary;
     }
 
-    // calculate earnings; override abstract method earnings in Employee
+    // calculate earnings; implement interface Payable method that was
+    // abstract in superclass Employee
     @Override
-    public double earnings() {
+    public double getPaymentAmount()
+    {
         return getWeeklySalary();
     }
 
@@ -37,5 +42,9 @@ public class SalariedEmployee extends Employee {
     public String toString() {
         return String.format("salaried employee: %s%n%s: $%,.2f",
                 super.toString(), "weekly salary", getWeeklySalary());
+    }
+
+    public double earnings() { // added to avoid errors
+        return 0.0;
     }
 }  // end class SalariedEmployee

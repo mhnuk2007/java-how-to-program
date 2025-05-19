@@ -59,4 +59,9 @@ public class CommissionEmployee extends Employee {
                 "gross sales", getGrossSales(),
                 "commission rate", getCommissionRate());
     }
+
+    @Override
+    public double getPaymentAmount() { // added to avoid errors
+        return 0;
+    }
 }

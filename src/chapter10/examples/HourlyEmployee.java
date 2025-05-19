@@ -58,4 +58,9 @@ public class HourlyEmployee extends Employee {
                 super.toString(), "hourly wage", getWage(),
                 "hours worked", getHours());
     }
+
+    @Override
+    public double getPaymentAmount() { //added to avoid errors
+        return 0;
+    }
 }

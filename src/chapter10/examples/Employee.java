@@ -1,8 +1,8 @@
 package chapter10.examples;
-// Fig. 10.4: Employee.java
-// Employee abstract superclass.
+// Fig. 10.13: Employee.java
+// Employee abstract superclass that implements Payable.
 
-public abstract class Employee {
+public abstract class Employee implements Payable {
     private final String firstName;
     private final String lastName;
     private final String socialSecurityNumber;
@@ -36,6 +36,10 @@ public abstract class Employee {
                 getFirstName(), getLastName(), getSocialSecurityNumber());
     }
 
-    // abstract method must be overridden by concrete subclasses
-    public abstract double earnings(); // no implementation here
+    public double earnings() { // added to avoid errors
+        return 0.0;
+    }
+
+    // Note: We do not implement Payable method getPaymentAmount here so
+    // this class must be declared abstract to avoid a compilation error.
 } // end abstract class Employee
