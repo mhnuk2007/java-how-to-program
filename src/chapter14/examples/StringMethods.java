@@ -1,4 +1,4 @@
-package chapter14;
+package chapter14.examples;
 
 // Demonstrates various String methods in Java
 public class StringMethods {
