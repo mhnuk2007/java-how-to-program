@@ -1,4 +1,15 @@
 package chapter14.exercises;
+/*
+Exercise 14.22 (Morse Code)
+Task:
+Write two Java applications (or a single combined program):
+
+    1.English to Morse: Reads an English phrase, converts it into Morse code, separating
+    Morse letters by one space, and words by three spaces.
+
+    2.Morse to English: Reads a Morse code phrase (with one space between letters and three
+    spaces between words), converts it back to English.
+ */
 
 import java.util.*;
 
