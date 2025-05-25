@@ -1,4 +1,8 @@
 package chapter14.exercises;
+/*
+Exercise 14.20 - Check Protection, which adds leading asterisks to dollar amounts to
+fill exactly 9 characters, helping prevent tampering
+ */
 
 import java.util.Scanner;
 
