@@ -1,4 +1,5 @@
-package chapter15.examples;// Fig. 15.3: CreateTextFile.java
+package chapter15.examples;
+// Fig. 15.3: CreateTextFile.java
 // Writing data to a sequential text file with class Formatter.
 
 import java.io.FileNotFoundException;

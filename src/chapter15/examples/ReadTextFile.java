@@ -1,4 +1,5 @@
-package chapter15.examples;// Fig. 15.6: ReadTextFile.java
+package chapter15.examples;
+// Fig. 15.6: ReadTextFile.java
 // This program reads a text file and displays each record.
 
 import java.io.IOException;
