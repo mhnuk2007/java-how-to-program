@@ -9,46 +9,50 @@ import java.util.List;
 
 public class CollectionTest {
     public static void main(String[] args) {
-        // add elements in colors array to list
-       String[] colors = {"MAGENTA", "RED", "WHITE", "BLUE", "CYAN"};
-       List<String> list = new ArrayList<>();
-       for (String color:colors){
-           list.add(color);
-       }
-        System.out.println(list);
+        // Add elements from colors array to list
+        String[] colors = {"MAGENTA", "RED", "WHITE", "BLUE", "CYAN"};
+        List<String> list = new ArrayList<>();
+        for (String color : colors) {
+            list.add(color);
+        }
 
-        // add elements in removeColors array to removeList
-        String [] removeColors =  {"RED", "WHITE", "BLUE"};
+        // Print initial list
+        System.out.println("Initial list: " + list);
+
+        // Add elements from removeColors array to removeList
+        String[] removeColors = {"RED", "WHITE", "BLUE"};
         List<String> removeList = new ArrayList<>();
-        for (String color:removeColors){
+        for (String color : removeColors) {
             removeList.add(color);
         }
-        System.out.println(removeList);
 
-        // output list contents
-        System.out.println("ArrayList: ");
-        for(int count = 0; count<list.size(); count++){
-            System.out.printf("%s ", list.get(count));
+        // Print remove list
+        System.out.println("Colors to remove: " + removeList);
+
+        // Output list contents
+        System.out.print("ArrayList before removal: ");
+        for (String color : list) {
+            System.out.printf("%s ", color);
         }
 
-        // remove from list the colors contained in removeList
+        // Remove from list the colors contained in removeList
         removeColors(list, removeList);
 
-        // output list contents
-        System.out.printf("%n%nArrayList after calling removeColors: %n");
-        for(String color:list){
+        // Output list contents after removal
+        System.out.printf("%n%nArrayList after calling removeColors:%n");
+        for (String color : list) {
             System.out.printf("%s ", color);
         }
     }
-    // remove colors specified in collection2 from collection1
-    public static void removeColors(Collection<String> collection1, Collection<String> collection2){
-        //get iterator
+
+    // Remove colors specified in collection2 from collection1
+    public static void removeColors(Collection<String> collection1, Collection<String> collection2) {
         Iterator<String> iterator = collection1.iterator();
-        // loop while collection has items
-        while (iterator.hasNext()){
-            if(collection2.contains(iterator.next())){
-                iterator.remove();
+        while (iterator.hasNext()) {
+            String current = iterator.next();
+            if (collection2.contains(current)) {
+                iterator.remove(); // Safe removal while iterating
             }
         }
     }
-} // end class CollectionTest
+}
