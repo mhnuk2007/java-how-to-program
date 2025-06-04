@@ -1,4 +1,10 @@
 package chapter16.exercises;
+/*
+16.20 (Sorting Words with a TreeSet) Write a program that uses a String method split to
+tokenize a line of text input by the user and places each token in a TreeSet. Print the
+elements of the TreeSet. [Note: This should cause the elements to be printed in
+ascending sorted order.]
+ */
 
 import java.util.Scanner;
 import java.util.Set;
