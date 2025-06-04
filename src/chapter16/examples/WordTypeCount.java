@@ -1,4 +1,5 @@
-package chapter16.examples;// Fig. 16.18: WordTypeCount.java
+package chapter16.examples;
+// Fig. 16.18: WordTypeCount.java
 // Program counts the number of occurrences of each word in a String.
 import java.util.Map;
 import java.util.HashMap;
