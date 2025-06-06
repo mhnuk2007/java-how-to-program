@@ -10,6 +10,10 @@ class Cat {
     int age;
     public Cat(){};
 
+    public String getName(){
+        return this.name;
+    }
+
 
 }
 
@@ -17,12 +21,13 @@ class Cat {
 public class Lambdas {
     public static void main(String[] args) {
         Cat cat = new Cat();
-        Printable lambdaPrintable = (p, s)->System.out.println(p + " Meow" + s);
+        cat.name = "cutie";
+        Printable lambdaPrintable = (p, s)->System.out.println(p + cat.getName() + " Meow" + s);
         printThing(lambdaPrintable);
     }
 
     static void printThing(Printable thing){
-        thing.print("Hello", "!");
+        thing.print("Hello ", "!");
     }
 }
 
