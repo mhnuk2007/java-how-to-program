@@ -7,7 +7,7 @@ interface MyInterface {
 }
 
 @FunctionalInterface
-interface SumInterface{
+interface SumInterface {
     int sum(int a, int b);
 }
 
@@ -33,8 +33,10 @@ public class LambdaExample {
         MyInterface lambdaImplementation = () -> System.out.println("Hello from lambda!");
         lambdaImplementation.sayHello();  // Output: Hello from lambda!
 
-        SumInterface sumImpl = (a,b)-> a+b;
-        System.out.println(sumImpl.sum(10,20));
+        SumInterface sumImpl = (a, b) -> a + b;
+
+        System.out.println(sumImpl.sum(10, 20));
+        System.out.println(sumImpl.sum(15, 18));
     }
 }
 
