@@ -19,8 +19,11 @@ class Cat implements Printable{
 public class Lambdas {
     public static void main(String[] args) {
         Cat cat = new Cat();
-        cat.print();
+        printThing(cat);
     }
 
-
+    static void printThing(Printable thing){
+        thing.print();
+    }
 }
+
