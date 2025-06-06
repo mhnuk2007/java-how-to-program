@@ -5,21 +5,20 @@ interface Printable {
 
 }
 
-class Cat implements Printable{
+class Cat {
     String name;
     int age;
     public Cat(){};
-    public void print(){
-        System.out.println("Meow");
 
-    }
+
 }
 
 
 public class Lambdas {
     public static void main(String[] args) {
         Cat cat = new Cat();
-        printThing(cat);
+        Printable lambdaPrintable = ()->System.out.println("Meow");
+        printThing(lambdaPrintable);
     }
 
     static void printThing(Printable thing){
