@@ -11,6 +11,11 @@ interface SumInterface {
     int sum(int a, int b);
 }
 
+@FunctionalInterface
+interface LengthInterface{
+    int length(String str);
+}
+
 // Step 2: Implementation using three approaches
 public class LambdaExample {
 
@@ -37,6 +42,14 @@ public class LambdaExample {
 
         System.out.println(sumImpl.sum(10, 20));
         System.out.println(sumImpl.sum(15, 18));
+
+        LengthInterface lengthImpl = (str) -> str.length();
+
+        System.out.println(lengthImpl.length("Hello"));
+        System.out.println(lengthImpl.length("World"));
+        System.out.println(lengthImpl.length("Java"));
+        System.out.println(lengthImpl.length("Lambda"));
+
     }
 }
 
