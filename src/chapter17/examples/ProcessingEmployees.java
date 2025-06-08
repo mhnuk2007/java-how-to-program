@@ -5,8 +5,10 @@ package chapter17.examples;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class ProcessingEmployees {
     public static void main(String[] args) {
@@ -73,5 +75,20 @@ public class ProcessingEmployees {
                 .sorted(lastThenFirst)
                 .map(Employee::getName)
                 .forEach(System.out::println);
+
+        // group Employees by department
+        System.out.printf("%nEmployees by department:%n");
+        Map<String, List<Employee>> groupedByDepartment =
+                list.stream()
+                        .collect(Collectors.groupingBy(Employee::getDepartment));
+        groupedByDepartment.forEach(
+                (department, employeeInDepartment)->{
+                    System.out.println(department);
+                    employeeInDepartment.forEach(
+                            employee -> System.out.printf("  %s%n", employee));
+
+                }
+        );
+
     }
 }
