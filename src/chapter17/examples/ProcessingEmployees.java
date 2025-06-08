@@ -29,7 +29,7 @@ public class ProcessingEmployees {
 
         // Predicate that returns true for salaries in the range $4000-$6000
         Predicate<Employee> fourToSixThousand =
-                e-> e.getSalary()>=4000 && e.getSalary()<=6000;
+                e -> e.getSalary() >= 4000 && e.getSalary() <= 6000;
         // Display Employees with salaries in the range $4000-$6000
         // sorted into ascending order by salary
         System.out.printf("%nEmployees earning $4000-$6000 per month sorted by salary:%n");
@@ -57,6 +57,21 @@ public class ProcessingEmployees {
         System.out.printf("%nEmployees in ascending order by last name then first:%n");
         list.stream()
                 .sorted(lastThenFirst)
+                .forEach(System.out::println);
+
+        // display unique employee last names sorted
+        System.out.printf("%nUnique employee last names:%n");
+        list.stream()
+                .map(Employee::getLastName)
+                .distinct()
+                .sorted()
+                .forEach(System.out::println);
+
+        // display only first and last names
+        System.out.printf("%nEmployee names in order by last name then first name:%n");
+        list.stream()
+                .sorted(lastThenFirst)
+                .map(Employee::getName)
                 .forEach(System.out::println);
     }
 }
