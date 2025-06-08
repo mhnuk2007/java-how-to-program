@@ -5,6 +5,7 @@ package chapter17.examples;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class ProcessingEmployees {
@@ -43,5 +44,19 @@ public class ProcessingEmployees {
                         .filter(fourToSixThousand)
                         .findFirst()
                         .get());
+
+        // Functions for getting first and last names from an Employee
+        Function<Employee, String> byFirstName = Employee::getFirstName;
+        Function<Employee, String> byLastName = Employee::getLastName;
+
+        // Comparator for comparing Employees by first name then last name
+        Comparator<Employee> lastThenFirst =
+                Comparator.comparing(byLastName).thenComparing(byFirstName);
+
+        // Sort Employees by last name, then first name
+        System.out.printf("%nEmployees in ascending order by last name then first:%n");
+        list.stream()
+                .sorted(lastThenFirst)
+                .forEach(System.out::println);
     }
 }
