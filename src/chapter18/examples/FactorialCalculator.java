@@ -1,22 +1,25 @@
 package chapter18.examples;
-// Fig. 18.3: FactorialCalculator.java
+// Fig. 18.4: FactorialCalculator.java
 // Recursive factorial method.
+
+import java.math.BigInteger;
 
 public class FactorialCalculator {
     // recursive method factorial (assumes its parameter is >= 0)
-    public static long factorial(int number) {
-        if (number <= 1) { // test for base case
-            return 1; // base cases: 0! = 1 and 1! = 1
+    public static BigInteger factorial(BigInteger number) {
+        if (number.compareTo(BigInteger.ONE) <= 0) { // test for base case
+            return BigInteger.ONE; // base cases: 0! = 1 and 1! = 1
         } else { //recursion step
-            return number * factorial(number - 1); // recursive call
+            return number.multiply(
+                    factorial(number.subtract(BigInteger.ONE))); // recursive call
         }
 
     }
 
     // output factorials for values 0-21
     public static void main(String[] args) {
-        for (int counter = 0; counter <= 21; counter++){
-            System.out.printf("%d! = %d%n", counter, factorial(counter));
+        for (int counter = 0; counter <= 50; counter++){
+            System.out.printf("%d! = %d%n", counter, factorial(BigInteger.valueOf(counter)));
         }
     }
 } // end class FactorialCalculator
