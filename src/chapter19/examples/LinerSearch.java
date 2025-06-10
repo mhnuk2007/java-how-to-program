@@ -2,11 +2,12 @@ package chapter19.examples;
 
 public class LinerSearch {
     public static int linearSearch(int[] arr, int key) {
-        for (int i = 0; i < arr.length; i++) {
+        int i =0;
+        while (i < arr.length) {
             if (arr[i] == key) {
                 return i;
             }
-
+            i++;
         }
         return -1;
     }
