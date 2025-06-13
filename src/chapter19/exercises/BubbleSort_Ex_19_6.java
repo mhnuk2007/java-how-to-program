@@ -1,4 +1,4 @@
-package chapter19.examples;
+package chapter19.exercises;
 /*
 Exercise 19.5: (Bubble Sort) Implement bubble sort—another simple yet inefficient sorting technique. It’s
 called bubble sort or sinking sort because smaller values gradually “bubble” their way to the top of
