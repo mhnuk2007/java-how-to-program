@@ -13,7 +13,7 @@ pass, the largest element will be in the last index. After two passes, the large
 in the last two indices. Explain why bubble sort is an O(n2) algorithm.
  */
 
-public class BubbleSort_Ex_19_6 {
+public class BubbleSort_Ex_19_5 {
     // Bubble sort method
     public static void bubbleSort(int[] data) {
         int size = data.length;
