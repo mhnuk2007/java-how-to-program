@@ -1,4 +1,6 @@
 package chapter19.examples;
+// Fig. 19.3: BinarySearchTest.java
+// Use binary search to locate an item in an array.
 
 import java.security.SecureRandom;
 import java.util.Arrays;
