@@ -1,6 +1,6 @@
 package chapter19.exercises;
 /*
-Exercise (Bucket Sort) A bucket sort begins with a one-dimensional array of positive integers to be
+Exercise 19.7: (Bucket Sort) A bucket sort begins with a one-dimensional array of positive integers to be
 sorted and a two-dimensional array of integers with rows indexed from 0 to 9 and columns indexed
 from 0 to n – 1, where n is the number of values to be sorted. Each row of the two-dimensional array is referred to as a bucket. Write a class named BucketSort containing a method called sort that operates as follows:
 a) Place each value of the one-dimensional array into a row of the bucket array, based on
